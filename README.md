@@ -1,7 +1,7 @@
 # Arduino HX711 library for Mongoose OS
 
 ## Example code for JS
-
+```
 load('api_arduino_hx711.js');
 let dataPin = 12;
 let clkPin=14;
@@ -16,3 +16,4 @@ Timer.set(1000 /* 1 sec */, Timer.REPEAT, function() {
   let value2 = sensor.read_average(4);
   print('HX711: ', value2);
 }, null);
+```
