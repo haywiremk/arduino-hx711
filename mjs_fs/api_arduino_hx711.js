@@ -47,8 +47,8 @@ let HX711 = {
 	get_units: function(times) {
       return HX711._c_gu(this.hx, times)  / 100.0;
     },
-	tare: function() {
-      HX711._c_tare(this.hx);
+	tare: function(times) {
+      HX711._c_tare(this.hx, times);
     },
 	set_scale: function(scale) {
       HX711._c_ss(this.hx, scale);
