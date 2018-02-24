@@ -7,10 +7,10 @@ let HX711 = {
   _c_pu: ffi('void mgos_hx711_power_up(void *)'),
   _c_so: ffi('void mgos_hx711_set_offset(void *, int)'),
   _c_go: ffi('int mgos_hx711_get_offset(void *)'),
-  _c_gv: ffi('int mgos_hx711_get_value(void *, int times)'),
-  _c_gu: ffi('int mgos_hx711_get_units(void *, int times)'),
-  _c_tare: ffi('void mgos_hx711_tare(void *, int times)'),
-  _c_ss: ffi('void mgos_hx711_set_scale(void *, int scale)'),
+  _c_gv: ffi('int mgos_hx711_get_value(void *, int)'),
+  _c_gu: ffi('int mgos_hx711_get_units(void *, int)'),
+  _c_tare: ffi('void mgos_hx711_tare(void *, int)'),
+  _c_ss: ffi('void mgos_hx711_set_scale(void *, int)'),
   _c_gs: ffi('int mgos_hx711_get_scale(void *)'),
 
 
