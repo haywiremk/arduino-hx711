@@ -64,7 +64,7 @@ int HX711::shiftIn(int dataPin, int clockPin, int bitOrder) {
  return value;
 }
 
-uint32_t HX711::read() {
+int32_t HX711::read() {
 	// wait for the chip to become ready
 	while (!is_ready()) {
 		// Will do nothing on Arduino but prevent resets of ESP8266 (Watchdog Issue)
@@ -95,16 +95,16 @@ uint32_t HX711::read() {
 	}
 
 	// Construct a 32-bit signed integer
-	value = ( static_cast<unsigned uint32_t>(filler) << 24
-			| static_cast<unsigned uint32_t>(data[2]) << 16
-			| static_cast<unsigned uint32_t>(data[1]) << 8
-			| static_cast<unsigned uint32_t>(data[0]) );
+	value = ( static_cast<unsigned int32_t>(filler) << 24
+			| static_cast<unsigned int32_t>(data[2]) << 16
+			| static_cast<unsigned int32_t>(data[1]) << 8
+			| static_cast<unsigned int32_t>(data[0]) );
 
-	return static_cast<uint32_t>(value);
+	return static_cast<int32_t>(value);
 }
 
-uint32_t HX711::read_average(uint8_t times) {
-	uint32_t sum = 0;
+int32_t HX711::read_average(uint8_t times) {
+	int32_t sum = 0;
 	for (byte i = 0; i < times; i++) {
 		sum += read();
 		//yield();
@@ -133,11 +133,11 @@ float HX711::get_scale() {
 	return SCALE;
 }
 
-void HX711::set_offset(uint32_t offset) {
+void HX711::set_offset(int32_t offset) {
 	OFFSET = offset;
 }
 
-uint32_t HX711::get_offset() {
+int32_t HX711::get_offset() {
 	return OFFSET;
 }
 

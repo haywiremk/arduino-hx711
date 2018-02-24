@@ -9,7 +9,7 @@ class HX711
 		uint8_t PD_SCK;	// Power Down and Serial Clock Input Pin
 		uint8_t DOUT;		// Serial Data Output Pin
 		uint8_t GAIN;		// amplification factor
-		uint32_t OFFSET = 0;	// used for tare weight
+		int32_t OFFSET = 0;	// used for tare weight
 		float SCALE = 1;	// used to return weight in grams, kg, ounces, whatever
 
 	public:
@@ -35,10 +35,10 @@ class HX711
 		int shiftIn(int dataPin, int clockPin, int bitOrder);
 
 		// waits for the chip to be ready and returns a reading
-		uint32_t read();
+		int32_t read();
 
 		// returns an average reading; times = how many times to read
-		uint32_t read_average(uint8_t times);
+		int32_t read_average(uint8_t times);
 
 		// returns (read_average() - OFFSET), that is the current value without the tare weight; times = how many readings to do
 		double get_value(uint8_t times = 1);
@@ -57,10 +57,10 @@ class HX711
 		float get_scale();
 
 		// set OFFSET, the value that's subtracted from the actual reading (tare weight)
-		void set_offset(uint32_t offset = 0);
+		void set_offset(int32_t offset = 0);
 
 		// get the current OFFSET
-		uint32_t get_offset();
+		int32_t get_offset();
 
 		// puts the chip into power down mode
 		void power_down();
