@@ -50,7 +50,7 @@ let HX711 = {
 	tare: function() {
       HX711._c_tare(this.hx);
     },
-	set_scale function(scale) {
+	set_scale: function(scale) {
       HX711._c_ss(this.hx, scale);
     },
 	get_scale: function() {
