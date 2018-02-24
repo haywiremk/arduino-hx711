@@ -1,0 +1,19 @@
+author: mongoose-os
+description: Arduino HX711 library
+type: lib
+version: 1.0
+
+sources:
+  - src
+includes:
+  - include
+libs:
+  - origin: https://github.com/mongoose-os-libs/arduino-compat
+
+tags:
+  - arduino
+  - c
+  - js
+  - hw
+
+manifest_version: 2017-09-29
